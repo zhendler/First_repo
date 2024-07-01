@@ -12,7 +12,7 @@ def normalize_phone(number):
     while len(valid_number)>10:
         valid_number=valid_number[1:]
 
-    return '+38' + valid_number
+    return '+38' + valid_number 
     
 #normalize_phone('38050-111-22-22')
 final_valid_numbers=[]    
