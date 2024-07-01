@@ -19,3 +19,6 @@ def get_numbers_ticket(min, max, quantity):
     
 
 get_win_list = get_numbers_ticket(20,30,5) 
+
+
+# я так розумію що треба зробити через try except, але щось туго йде ця тема в мене, то буде так а там надолужу з try except.
