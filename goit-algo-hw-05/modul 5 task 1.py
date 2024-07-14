@@ -28,9 +28,10 @@ def fibonacci_recursive(n):
     return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)
   
 
-fib = caching_fibonacci()
-#fib_rec=fibonacci_recursive(10)
+#fib = caching_fibonacci()
+fib_rec=fibonacci_recursive(22)
 
 
-print(f'fib caching {fib(100)}')  
-print(f'fib caching {fib(10)}')  
+#print(f'fib caching {fib(100)}')  
+#print(f'fib caching {fib(10)}')  
+print(f'fib rec {fib_rec}')  
