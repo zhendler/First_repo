@@ -16,7 +16,7 @@ def caching_fibonacci(cache_size=10):
         cache[n] = fibonacci(n - 1) + fibonacci(n - 2)
         return cache[n]
     #fib_list=[num for num in cache.values()]
-    #print(fib_list)
+    #print(fib_list) 
     return fibonacci
 
 def fibonacci_recursive(n):
@@ -32,5 +32,5 @@ fib = caching_fibonacci()
 #fib_rec=fibonacci_recursive(10)
 
 
-print(f'fib caching {fib(3)}')  
-print(f'fib caching {fib(6)}')  
+print(f'fib caching {fib(100)}')  
+print(f'fib caching {fib(10)}')  
