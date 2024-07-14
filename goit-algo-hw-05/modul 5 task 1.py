@@ -31,6 +31,6 @@ def fibonacci_recursive(n):
 fib = caching_fibonacci()
 #fib_rec=fibonacci_recursive(10)
 
-#print(f' rec {fib_rec}')
+
 print(f'fib caching {fib(3)}')  
 print(f'fib caching {fib(6)}')  
