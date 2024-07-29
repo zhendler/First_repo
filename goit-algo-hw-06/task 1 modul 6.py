@@ -23,12 +23,26 @@ class Phone(Field):
 
         value = ('+38' + valid_number )
         super().__init__(value)
+
+class Birthday(Field):
+    def __init__(self, value):
+        try:
+            # Додайте перевірку коректності даних
+            # та перетворіть рядок на об'єкт datetime
+        except ValueError:
+            raise ValueError("Invalid date format. Use DD.MM.YYYY")
+
 class Record:
     def __init__(self, name):
         self.name = Name(name)
         self.phones = []
+        self.birthday = None
+
     def add_phone(self,phone):
         self.phones.append(Phone(phone))
+
+    def add_birthday(self, b_date):
+        pass
 
     def remove_phone(self, phone):
         for p in self.phones:
@@ -68,6 +82,20 @@ class AddressBook(UserDict):
     def delete(self, name):
         if name in self.data:
             del self.data[name]
+
+    @input_error
+    def add_birthday(args, book):
+        # реалізація
+        pass
+
+    @input_error
+    def show_birthday(args, book):
+        # реалізація
+        pass
+    @input_error
+    def birthdays(args, book):
+        # реалізація
+        pass
 
     def __str__(self):
         return "\n".join(str(record) for record in self.data.values())
