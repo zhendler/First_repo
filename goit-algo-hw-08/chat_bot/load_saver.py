@@ -13,5 +13,6 @@ def load_data():
 	try:
 		with open(RECORDS_FILE_PATH, "rb") as f:
 			return pickle.load(f)
+			
 	except FileNotFoundError:
 		return AddressBook()
