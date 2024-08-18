@@ -1,3 +1,4 @@
+from console_view import ConsoleView
 from addressbook import AddressBook
 from commands import add_contact, show_phone, show_all_contacts, add_birthday, show_birthday, birthdays
 from input_error import parse_input
@@ -5,18 +6,26 @@ from load_saver import save_data , load_data
 
 def main():
     book = load_data()
-
+    view = ConsoleView()
+    view.display_help()
     while True:
-        user_input = input("Enter a command: ")
+        
+        user_input = view.get_input("Enter a command: ")
         command, args = parse_input(user_input)
 
         if command == "hello":
             print("How can I help you?")
         elif command == "add":
-            print(add_contact(args, book))
+            if len(args) != 2:
+                view.display_massage("Invalid number of arguments. Usage: add [name] [phone number]")
+                continue
+            view.display_massage(add_contact(args, book))
             save_data(book)
         elif command == "show":
-            print(show_phone(args, book))
+            if not args:
+                view.display_massage("Please specify a contact name.")
+                continue
+            view.display_massage(show_phone(args, book))
         elif command == "all":
             print(show_all_contacts(book))
         elif command == "add-birthday":
