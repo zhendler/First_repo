@@ -25,18 +25,20 @@ def main():
             if not args:
                 view.display_massage("Please specify a contact name.")
                 continue
-            view.display_massage(show_phone(args, book))
+            view.display_contact(show_phone(args, book))
         elif command == "all":
-            print(show_all_contacts(book))
+            view.display_contacts(show_all_contacts(book))
         elif command == "add-birthday":
-            print(add_birthday(args, book))
+            view.display_massage(add_birthday(args, book))
             save_data(book)
         elif command == "show-birthday":
-            print(show_birthday(args, book))
+            view.display_massage(show_birthday(args, book))
         elif command == "birthdays":
             print(birthdays(args, book))
+        elif command == "help":
+            view.display_help()
         elif command in ("close", "exit"):
-            print("Good bye!")
+            view.display_massage("Good bye!")
             save_data(book)
             break
         else:

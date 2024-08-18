@@ -10,8 +10,8 @@ class ConsoleView(UserView):
 		return input(prompt)
 	
 	def display_contacts(self, contacts):
-		for contact in contacts.values():
-			print(contact)
+
+			print(contacts)
 
 	def display_contact(self, contact):
 		print(contact)
@@ -26,6 +26,7 @@ class ConsoleView(UserView):
 		- add-birthday [name] [date of birth]: Add a birthday to a contact
 		- show-birthday [name]: Show the birthday of a contact
 		- birthdays: Show upcoming birthdays
+		- help: Show this help again
 		- exit: Exit the application
 		""")
 
